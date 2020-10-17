@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'bambalaam'
-SITENAME = 'My Website'
+SITENAME = 'BamBalaam'
 SITEURL = ''
 
 PATH = 'content'
@@ -19,17 +19,19 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
-
 DEFAULT_PAGINATION = 5
+DISPLAY_PAGES_ON_MENU = True
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+THEME = "themes/pelican-alchemy/alchemy"
+SITEIMAGE = 'images/avatar.png'
+
+FOOTER_LINKS = [("Source", "https://github.com/BamBalaam/bambalaam.github.io")]
+THEME_CSS_OVERRIDES = ['theme/css/oldstyle.css']
+
+ICONS = (
+    ('github', 'https://github.com/BamBalaam'),
+    ('linkedin', 'https://linkedin.com/in/andremadeiracortes'),
+)
