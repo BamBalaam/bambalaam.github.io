@@ -28,10 +28,6 @@ nav:
   - Home: index.md
   #- About: about.md
 
-# Extra files
-extra_files:
-  - CNAME
-
 # Extensions
 markdown_extensions:
   - meta
