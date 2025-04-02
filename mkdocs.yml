@@ -5,6 +5,15 @@ site_description: Your personal website and blog
 
 theme:
   name: material
+  features:
+    - content.code.copy
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
@@ -23,15 +32,19 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
 
+extra:
+  generator: false
+
 # Navigation
 nav:
   - Home: index.md
-  #- About: about.md
+  - About: about.md
 
 # Extensions
 markdown_extensions:
   - meta
   - admonition
+  - attr_list
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.tabbed
