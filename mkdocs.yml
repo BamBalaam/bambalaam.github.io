@@ -39,6 +39,7 @@ extra:
 nav:
   - Home: index.md
   - About: about.md
+  - Now: now.md
 
 # Extensions
 markdown_extensions:
