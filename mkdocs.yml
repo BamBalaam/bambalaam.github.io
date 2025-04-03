@@ -38,8 +38,14 @@ extra:
 # Navigation
 nav:
   - Home: index.md
+  - Blog: blog/index.md
   - About: about.md
   - Now: now.md
+
+plugins:
+  - search
+  - blog:
+      post_url_date_format: yyyy
 
 # Extensions
 markdown_extensions:
