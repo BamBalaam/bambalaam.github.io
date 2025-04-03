@@ -2,6 +2,7 @@ site_name: André Madeira Cortes
 site_url: https://bambalaam.me
 site_author: André Madeira Cortes
 site_description: Your personal website and blog
+copyright: Copyright &copy; 2025 André Madeira Cortes
 
 theme:
   name: material
@@ -34,6 +35,11 @@ theme:
 
 extra:
   generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/BamBalaam
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/andremadeiracortes/
 
 # Navigation
 nav:
