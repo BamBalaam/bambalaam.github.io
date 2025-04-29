@@ -5,15 +5,15 @@ hide:
 
 # About
 
-I'm André.
+Hi there! I'm André.
 
 ![Me](images/avatar.png)
 
 ## Work
 
-I work as a Technical Team Leader and Product Manager at [Famoco](http://famoco.com).
+I work as a Technical Product Manager at [Famoco](http://famoco.com).
 
-Before that, I worked as a Backend Developer for several years.
+Before that, I worked as a Backend Developer and a Technical Team Leader for several years.
 
 ## Education
 
