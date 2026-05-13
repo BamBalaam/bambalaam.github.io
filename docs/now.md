@@ -5,7 +5,13 @@ hide:
 
 # Now
 
-Last update: 2025-04-03[^1]
+Last update: 2026-05-13[^1]
+
+## Building
+
+- This website, which has been neglected for quite a while
+- <a href="https://github.com/BamBalaam/lojban-toolkit" target="_blank">lojban-toolkit</a>, which has remained
+in a limbo since the end of my master's thesis
 
 ## Learning
 

@@ -1,8 +1,11 @@
-site_name: André Madeira Cortes
+site_name: BamBalaam
 site_url: https://bambalaam.me
 site_author: André Madeira Cortes
-site_description: Your personal website and blog
-copyright: Copyright &copy; 2025 André Madeira Cortes
+site_description: Personal website of André Madeira Cortes
+copyright: Copyright &copy; 2026 André Madeira Cortes
+
+hooks:
+  - hooks/gantt.py
 
 theme:
   name: material
@@ -15,23 +18,30 @@ theme:
     - navigation.tracking
     - search.highlight
     - search.suggest
+    - toc.follow
   palette:
-    # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-night
         name: Switch to dark mode
-    # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue
-      accent: blue
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-sunny
         name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+extra_css:
+  - stylesheets/design.css
+  - stylesheets/gantt.css
+  - stylesheets/education.css
 
 extra:
   generator: false
@@ -41,17 +51,23 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/andremadeiracortes/
 
-# Navigation
+plugins:
+  - search
+  - blog
+
 nav:
   - Home: index.md
   - About: about.md
+  - Projects: projects.md
+  - Blog:
+    - blog/index.md
   - Now: now.md
 
-# Extensions
 markdown_extensions:
   - meta
   - admonition
   - attr_list
+  - md_in_html
   - footnotes
   - pymdownx.highlight
   - pymdownx.superfences

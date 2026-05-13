@@ -1,0 +1,28 @@
+timeline_start: "2016-10"
+timeline_end: null  # null = date.today() at build time
+
+tracks:
+  - role: Backend Developer
+    bars:
+      - company: Motion Picture Association
+        short_label: MPA
+        start: "2016-10"
+        end: "2017-05"
+      - company: Famoco
+        short_label: Famoco
+        start: "2017-10"
+        end: "2021-08"
+
+  - role: Technical Team Leader
+    bars:
+      - company: Famoco
+        short_label: Famoco
+        start: "2021-08"
+        end: "2025-04"
+
+  - role: Technical Product Manager
+    bars:
+      - company: Famoco
+        short_label: Famoco
+        start: "2024-10"
+        end: null  # Present

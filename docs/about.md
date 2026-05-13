@@ -5,23 +5,38 @@ hide:
 
 # About
 
-Hi there! I'm André.
+![Me](images/avatar.png){ .about-avatar }
 
-![Me](images/avatar.png)
+---
 
-## Work
+## Experience
 
-I work as a Technical Product Manager at [Famoco](http://famoco.com).
+For more information and descriptions, please check my
+<a href="https://www.linkedin.com/in/andremadeiracortes/" target="_blank">LinkedIn</a> page
 
-Before that, I worked as a Backend Developer and a Technical Team Leader for several years.
+<!-- gantt -->
+
+---
 
 ## Education
 
-I hold a Bachelor's degree in Computer Science and a Master's degree in 
-[Information and Communication Science and Technology](https://mastic.ulb.ac.be/), both from the
-[Université Libre de Bruxelles](https://www.ulb.be/).
+<div class="edu-block">
+  <div class="edu-university">Alma Mater: <a href="https://www.ulb.be/" target="_blank">Université Libre de Bruxelles</a></div>
+  <div class="edu-grid">
+    <div class="edu-entry">
+      <div class="edu-degree">Master's in Information and Communication Science and Technology</div>
+      <div class="edu-program"><a href="https://mastic.ulb.ac.be/" target="_blank">MASTIC</a></div>
+    </div>
+    <div class="edu-entry">
+      <div class="edu-degree">Bachelor's in Computer Science</div>
+      <div class="edu-program"><a href="https://sciences.ulb.be/departement-d-informatique/" target="_blank">DI</a></div>
+    </div>
+  </div>
+</div>
+
+---
 
 ## Colophon
 
 This website is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), and thus
-indirectly with [MkDocs](https://www.mkdocs.org/) itself.
+indirectly with [MkDocs](https://www.mkdocs.org/) itself

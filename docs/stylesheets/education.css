@@ -1,0 +1,51 @@
+/* ===== EDUCATION ===== */
+
+.edu-block {
+  margin-top: 1.5rem;
+}
+
+.edu-university {
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--lighter);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.edu-entry:first-child {
+  padding-right: 1.5rem;
+}
+
+.edu-entry + .edu-entry {
+  border-left: 1px solid var(--md-default-fg-color--lightest);
+  padding-left: 1.5rem;
+}
+
+.edu-degree {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color);
+  line-height: 1.35;
+  margin-bottom: 0.4rem;
+}
+
+.edu-program {
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+}
+
+@media screen and (max-width: 600px) {
+  .edu-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem 0;
+  }
+}

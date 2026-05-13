@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+/* ===== LIGHT MODE — QUIET STONE ===== */
+
+[data-md-color-scheme="default"] {
+  /* fg = header background, bg = icons/text ON that background */
+  --md-primary-fg-color:              #f4f1ec;
+  --md-primary-bg-color:              #2a2520;
+  --md-primary-bg-color--light:       rgba(42, 37, 32, 0.54);
+  --md-accent-fg-color:               #2a2520;
+  --md-accent-fg-color--transparent:  rgba(42, 37, 32, 0.1);
+  --md-accent-bg-color:               #f4f1ec;
+  --md-default-bg-color:              #e9e5de;
+  --md-default-fg-color:              #2a2520;
+  --md-default-fg-color--light:       rgba(42, 37, 32, 0.58);
+  --md-default-fg-color--lighter:     rgba(42, 37, 32, 0.34);
+  --md-default-fg-color--lightest:    rgba(42, 37, 32, 0.09);
+  --md-code-bg-color:                 #dbd7d0;
+  --md-code-fg-color:                 #3d3830;
+  --md-typeset-a-color:               #2a2520;
+}
+
+/* ===== DARK MODE ===== */
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:              #1e1c18;
+  --md-primary-bg-color:              #ddd8d1;
+  --md-primary-bg-color--light:       rgba(221, 216, 209, 0.54);
+  --md-accent-fg-color:               #ddd8d1;
+  --md-accent-fg-color--transparent:  rgba(221, 216, 209, 0.1);
+  --md-accent-bg-color:               #1e1c18;
+  --md-default-bg-color:              #1a1714;
+  --md-default-fg-color:              #ddd8d1;
+  --md-default-fg-color--light:       rgba(221, 216, 209, 0.58);
+  --md-default-fg-color--lighter:     rgba(221, 216, 209, 0.34);
+  --md-default-fg-color--lightest:    rgba(221, 216, 209, 0.09);
+  --md-code-bg-color:                 #252219;
+  --md-code-fg-color:                 #c8c3bb;
+  --md-typeset-a-color:               #ddd8d1;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h1 { font-size: 2.4rem; line-height: 1.15; }
+.md-typeset h2 { font-size: 1.7rem; }
+.md-typeset h3 { font-size: 1.3rem; }
+
+.md-typeset {
+  letter-spacing: 0.012em;
+  line-height: 1.8;
+}
+
+/* Links — underlined, no color shift */
+[data-md-color-scheme="default"] .md-typeset a {
+  color: var(--md-default-fg-color);
+  text-decoration: underline;
+  text-decoration-color: rgba(42, 37, 32, 0.28);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+[data-md-color-scheme="default"] .md-typeset a:hover {
+  color: var(--md-default-fg-color);
+  text-decoration-color: rgba(42, 37, 32, 0.72);
+}
+
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: var(--md-default-fg-color);
+  text-decoration: underline;
+  text-decoration-color: rgba(221, 216, 209, 0.3);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: var(--md-default-fg-color);
+  text-decoration-color: rgba(221, 216, 209, 0.75);
+}
+
+/* ===== HEADER ===== */
+
+.md-header {
+  box-shadow: none;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-header__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+/* ===== NAVIGATION TABS — bare text, zero chrome ===== */
+
+.md-tabs {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-tabs__link {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--md-default-fg-color--light) !important;
+  opacity: 1;
+  transition: color 0.2s ease;
+}
+
+.md-tabs__link:hover {
+  color: var(--md-default-fg-color) !important;
+}
+
+.md-tabs__link--active {
+  color: var(--md-default-fg-color) !important;
+}
+
+/* Remove the colored accent underline on active tab */
+.md-tabs__link--active::after {
+  display: none !important;
+}
+
+/* ===== HOME PAGE ===== */
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem 2rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.home-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.25rem;
+  filter: grayscale(15%);
+}
+
+.home-name {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.2rem !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em;
+  line-height: 1.1 !important;
+  white-space: nowrap;
+  margin: 0 0 0.4rem !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+.home-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--md-default-fg-color--light);
+  margin: 0 0 1rem;
+}
+
+.home-bio {
+  font-size: 0.975rem;
+  line-height: 1.8;
+  color: var(--md-default-fg-color--light);
+  max-width: 400px;
+  margin: 0 0 1.5rem;
+}
+
+.home-divider {
+  width: 24px;
+  height: 1px;
+  background: var(--md-default-fg-color--lighter);
+  border: none;
+  margin: 0 auto 1.5rem;
+}
+
+.home-nav {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.home-nav li {
+  margin: 0 !important;
+}
+
+.home-nav a {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color--lighter) !important;
+  text-decoration: none !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.home-nav a:hover {
+  color: var(--md-default-fg-color) !important;
+}
+
+/* ===== ABOUT PAGE ===== */
+
+.about-avatar {
+  display: block;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 2rem;
+  filter: grayscale(15%);
+}
+
+/* ===== PROJECTS PAGE ===== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--md-default-fg-color--lighter);
+}
+
+.project-card h3 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  margin: 0 0 0.5rem !important;
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+.project-card h3 a {
+  color: var(--md-default-fg-color) !important;
+  text-decoration: none !important;
+}
+
+.project-card p {
+  font-size: 0.875rem !important;
+  color: var(--md-default-fg-color--light) !important;
+  margin: 0 0 1rem !important;
+  line-height: 1.65;
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light);
+  font-family: var(--md-code-font);
+  letter-spacing: 0.03em;
+}
+
+/* ===== CV PAGE ===== */
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.cv-entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.cv-entry-title {
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.cv-entry-org {
+  font-size: 0.875rem;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 0.6rem;
+}
+
+.cv-entry-period {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--lighter);
+  white-space: nowrap;
+  align-self: start;
+  padding-top: 2px;
+  text-align: right;
+  letter-spacing: 0.02em;
+}
+
+.cv-entry-desc {
+  grid-column: 1;
+  font-size: 0.875rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== MOBILE ===== */
+
+@media screen and (max-width: 600px) {
+  .home-name {
+    font-size: 1.5rem !important;
+    white-space: normal;
+  }
+
+  .cv-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-entry-period {
+    order: -1;
+    text-align: left;
+    margin-bottom: 0.25rem;
+  }
+}
