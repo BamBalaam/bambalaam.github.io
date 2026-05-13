@@ -4,6 +4,13 @@ hide:
   - toc
 ---
 
-# Test Website
-
-Just testing things out, not much to see right now.
+<div class="home-hero">
+  <img src="images/avatar.png" alt="André Madeira Cortes" class="home-avatar">
+  <h1 class="home-name">André Madeira Cortes</h1>
+  <p class="home-subtitle">Technical Product Manager &middot; Brussels, Belgium</p>
+  <p class="home-bio">
+    Product person with a background in software engineering.
+    I work at <a href="https://famoco.com" target="_blank">Famoco</a>,
+    building and promoting SaaS platforms to manage hundreds of thousands of devices remotely.
+  </p>
+</div>
