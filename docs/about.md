@@ -56,20 +56,18 @@ For more information and descriptions, please check my
 
 ## Education
 
-<div class="cv-entry">
-  <div>
-    <div class="cv-entry-title">Master's in Information and Communication Science and Technology</div>
-    <div class="cv-entry-org"><a href="https://mastic.ulb.ac.be/" target="_blank">MASTIC</a> · <a href="https://www.ulb.be/" target="_blank">Université Libre de Bruxelles</a></div>
+<div class="edu-block">
+  <div class="edu-university"><a href="https://www.ulb.be/" target="_blank">Université Libre de Bruxelles</a></div>
+  <div class="edu-grid">
+    <div class="edu-entry">
+      <div class="edu-degree">Master's in Information and Communication Science and Technology</div>
+      <div class="edu-program"><a href="https://mastic.ulb.ac.be/" target="_blank">MASTIC</a></div>
+    </div>
+    <div class="edu-entry">
+      <div class="edu-degree">Bachelor's in Computer Science</div>
+      <div class="edu-program"><a href="https://sciences.ulb.be/departement-d-informatique/" target="_blank">DI</a></div>
+    </div>
   </div>
-  <div class="cv-entry-period"><!-- Year --></div>
-</div>
-
-<div class="cv-entry">
-  <div>
-    <div class="cv-entry-title">Bachelor's in Computer Science</div>
-    <div class="cv-entry-org"><a href="https://sciences.ulb.be/departement-d-informatique/" target="_blank">DI</a> · <a href="https://www.ulb.be/" target="_blank">Université Libre de Bruxelles</a></div>
-  </div>
-  <div class="cv-entry-period"><!-- Year --></div>
 </div>
 
 ## Colophon

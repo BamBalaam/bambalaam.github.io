@@ -38,6 +38,7 @@ theme:
 extra_css:
   - stylesheets/design.css
   - stylesheets/gantt.css
+  - stylesheets/education.css
 
 extra:
   generator: false
