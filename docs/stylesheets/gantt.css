@@ -1,0 +1,126 @@
+/* ===== EXPERIENCE GANTT ===== */
+
+.gantt-wrapper {
+  --gantt-label-width: 13rem;
+  margin-top: 1.5rem;
+}
+
+.gantt,
+.gantt-footer {
+  display: flex;
+}
+
+.gantt-labels,
+.gantt-footer-spacer {
+  flex-shrink: 0;
+  width: var(--gantt-label-width);
+}
+
+.gantt-labels {
+  padding-right: 1.25rem;
+  box-sizing: border-box;
+}
+
+.gantt-label-spacer {
+  height: 1.75rem;
+}
+
+.gantt-label {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.gantt-tracks {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Overlap highlight band */
+.gantt-overlap-band {
+  position: absolute;
+  top: 1.75rem;
+  bottom: 0;
+  background: var(--md-default-fg-color--lightest);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Year axis */
+.gantt-axis {
+  position: relative;
+  height: 1.75rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.gantt-year {
+  position: absolute;
+  bottom: 0.3rem;
+  font-size: 0.6rem;
+  font-family: var(--md-code-font);
+  color: var(--md-default-fg-color--lighter);
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+/* Track rows */
+.gantt-track {
+  position: relative;
+  height: 2.5rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  z-index: 1;
+}
+
+.gantt-track:last-child {
+  border-bottom: none;
+}
+
+/* Bars */
+.gantt-bar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 1.4rem;
+  border-radius: 3px;
+  background: var(--md-default-fg-color--lighter);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.gantt-bar--current {
+  background: var(--md-default-fg-color--light);
+  border-radius: 3px 0 0 3px;
+}
+
+.gantt-bar-label {
+  font-size: 0.62rem;
+  padding: 0 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--md-default-fg-color);
+  letter-spacing: 0.03em;
+}
+
+/* Overlap label below the chart */
+.gantt-footer {
+  margin-top: 0.4rem;
+}
+
+.gantt-footer-track {
+  position: relative;
+  flex: 1;
+}
+
+.gantt-overlap-label {
+  position: absolute;
+  font-size: 0.6rem;
+  font-family: var(--md-code-font);
+  color: var(--md-default-fg-color--lighter);
+  transform: translateX(-50%);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}

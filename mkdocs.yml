@@ -36,7 +36,8 @@ theme:
     code: JetBrains Mono
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/design.css
+  - stylesheets/gantt.css
 
 extra:
   generator: false
