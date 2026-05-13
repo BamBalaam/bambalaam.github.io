@@ -4,6 +4,9 @@ site_author: André Madeira Cortes
 site_description: Personal website of André Madeira Cortes
 copyright: Copyright &copy; 2026 André Madeira Cortes
 
+hooks:
+  - hooks/gantt.py
+
 theme:
   name: material
   features:
