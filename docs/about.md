@@ -7,6 +7,8 @@ hide:
 
 ![Me](images/avatar.png){ .about-avatar }
 
+---
+
 ## Experience
 
 For more information and descriptions, please check my
@@ -54,10 +56,12 @@ For more information and descriptions, please check my
   </div>
 </div>
 
+---
+
 ## Education
 
 <div class="edu-block">
-  <div class="edu-university"><a href="https://www.ulb.be/" target="_blank">Université Libre de Bruxelles</a></div>
+  <div class="edu-university">Alma Mater: <a href="https://www.ulb.be/" target="_blank">Université Libre de Bruxelles</a></div>
   <div class="edu-grid">
     <div class="edu-entry">
       <div class="edu-degree">Master's in Information and Communication Science and Technology</div>
@@ -69,6 +73,8 @@ For more information and descriptions, please check my
     </div>
   </div>
 </div>
+
+---
 
 ## Colophon
 
