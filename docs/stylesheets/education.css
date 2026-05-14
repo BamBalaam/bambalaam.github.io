@@ -46,6 +46,18 @@
 @media screen and (max-width: 600px) {
   .edu-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem 0;
+    gap: 0;
+  }
+
+  .edu-entry:first-child {
+    padding-right: 0;
+    padding-bottom: 1.25rem;
+  }
+
+  .edu-entry + .edu-entry {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--md-default-fg-color--lightest);
+    padding-top: 1.25rem;
   }
 }

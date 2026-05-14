@@ -124,3 +124,15 @@
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 768px) {
+  .gantt-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .gantt,
+  .gantt-footer {
+    min-width: 580px;
+  }
+}
