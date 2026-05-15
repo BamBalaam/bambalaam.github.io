@@ -1,0 +1,65 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+<article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    {% if post.authors %}
+      <nav class="md-post__authors md-typeset">
+        {% for author in post.authors %}
+          <span class="md-author">
+            <img src="{{ author.avatar | url }}" alt="{{ author.name }}">
+          </span>
+        {% endfor %}
+      </nav>
+    {% endif %}
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="{{ post.config.date.created }}">
+            {{- post.config.date.created | date -}}
+          </time>
+          {#- Collapse whitespace -#}
+        </li>
+        {% if post.config.readtime %}
+          {% set time = post.config.readtime %}
+          <li class="md-meta__item">
+            {% if time == 1 %}
+              {{ lang.t("readtime.one") }}
+            {% else %}
+              {{ lang.t("readtime.other") | replace("#", time) }}
+            {% endif %}
+          </li>
+        {% endif %}
+      </ul>
+      {% if post.config.draft %}
+        <span class="md-draft">
+          {{ lang.t("blog.draft") }}
+        </span>
+      {% endif %}
+    </div>
+    {% if post.categories %}
+      <div class="blog-categories">
+        {% for category in post.categories %}
+          <a href="{{ category.url | url }}" class="blog-category-tag">
+            {{- category.title -}}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+  <div class="md-post__content md-typeset">
+    {% if post.meta.blurb %}
+      <h2><a href="{{ post.post.url | url }}">{{ post.post.title }}</a></h2>
+      {{ post.meta.blurb }}
+    {% else %}
+      {{ post.content }}
+    {% endif %}
+    {% if post.more %}
+      <nav class="md-post__action">
+        <a href="{{ post.url | url }}">
+          {{ lang.t("blog.continue") }}
+        </a>
+      </nav>
+    {% endif %}
+  </div>
+</article>

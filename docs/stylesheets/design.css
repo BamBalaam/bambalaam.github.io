@@ -326,6 +326,58 @@
   margin: 0;
 }
 
+/* ===== BLOG NAV ===== */
+
+/* Hide the auto-generated Categories section from the left nav */
+.md-nav__item:has(> a.md-nav__link[href*="category/"]),
+.md-nav__item.md-nav__item--nested:has(> nav.md-nav > ul > li > a.md-nav__link[href*="category/"]) {
+  display: none;
+}
+
+/* ===== BLOG INDEX SIDEBAR ===== */
+
+.blog-sidebar-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--lighter);
+  margin: 0 0 0.6rem;
+  font-weight: 400;
+}
+
+.blog-sidebar-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* ===== BLOG CATEGORY TAGS ===== */
+
+.blog-categories {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.blog-category-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 2px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light) !important;
+  text-decoration: none !important;
+  letter-spacing: 0.03em;
+  font-family: var(--md-code-font);
+  transition: color 0.2s ease;
+}
+
+.blog-category-tag:hover {
+  color: var(--md-default-fg-color) !important;
+}
+
 /* ===== MOBILE ===== */
 
 @media screen and (max-width: 600px) {

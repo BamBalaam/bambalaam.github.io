@@ -9,6 +9,7 @@ hooks:
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - content.code.copy
     - navigation.indexes
@@ -53,7 +54,12 @@ extra:
 
 plugins:
   - search
-  - blog
+  - meta
+  - blog:
+      archive: false
+      categories_toc: false
+      post_url_format: "{slug}"
+      draft_on_serve: false
 
 nav:
   - Home: index.md
