@@ -15,11 +15,24 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="{{ post.config.date.created }}">
-            {{- post.config.date.created | date -}}
-          </time>
+          <span class="md-meta__date" title="Created">
+            {% include ".icons/material/calendar.svg" %}
+            <time datetime="{{ post.config.date.created }}">
+              {{- post.config.date.created | date -}}
+            </time>
+          </span>
           {#- Collapse whitespace -#}
         </li>
+        {% if post.config.date.updated %}
+          <li class="md-meta__item">
+            <span class="md-meta__date" title="Updated">
+              {% include ".icons/material/calendar-clock.svg" %}
+              <time datetime="{{ post.config.date.updated }}">
+                {{- post.config.date.updated | date -}}
+              </time>
+            </span>
+          </li>
+        {% endif %}
         {% if post.config.readtime %}
           {% set time = post.config.readtime %}
           <li class="md-meta__item">

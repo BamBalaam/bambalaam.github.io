@@ -326,6 +326,21 @@
   margin: 0;
 }
 
+/* ===== BLOG POST DATES ===== */
+
+.md-meta__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.md-meta__date svg {
+  width: 0.85em;
+  height: 0.85em;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 /* ===== BLOG NAV ===== */
 
 /* Hide the auto-generated Categories section from the left nav */
