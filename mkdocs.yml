@@ -22,6 +22,7 @@ theme:
     - search.highlight
     - search.suggest
     - toc.follow
+    - toc.integrate
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -45,6 +46,10 @@ extra_css:
   - stylesheets/design.css
   - stylesheets/gantt.css
   - stylesheets/education.css
+  - stylesheets/sidenotes.css
+
+extra_javascript:
+  - javascript/sidenotes.js
 
 extra:
   generator: false
