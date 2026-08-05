@@ -13,7 +13,8 @@ hide:
 ## Experience
 
 For more information and descriptions, please check my
-<a href="https://www.linkedin.com/in/andremadeiracortes/" target="_blank">LinkedIn</a> page
+<a href="https://www.linkedin.com/in/andremadeiracortes/" target="_blank">LinkedIn</a> page.
+Highlighting a specific bar outputs the exact dates.
 
 <!-- gantt -->
 
@@ -40,4 +41,4 @@ For more information and descriptions, please check my
 ## Colophon
 
 This website is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), and thus
-indirectly with [MkDocs](https://www.mkdocs.org/) itself
+indirectly with [MkDocs](https://www.mkdocs.org/) itself.
