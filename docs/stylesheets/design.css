@@ -18,6 +18,9 @@
   --md-code-bg-color:                 #dbd7d0;
   --md-code-fg-color:                 #3d3830;
   --md-typeset-a-color:               #2a2520;
+  /* Body links — warm terracotta, in the sepia family (5.2:1 on the bg) */
+  --link-color:                       #9c4221;
+  --link-color--hover:                #7f3419;
 }
 
 /* ===== DARK MODE ===== */
@@ -37,6 +40,9 @@
   --md-code-bg-color:                 #252219;
   --md-code-fg-color:                 #c8c3bb;
   --md-typeset-a-color:               #ddd8d1;
+  /* Body links — soft terracotta, lifted for dark bg (7:1 on the bg) */
+  --link-color:                       #dd9165;
+  --link-color--hover:                #e8a67f;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -59,29 +65,73 @@
   line-height: 1.8;
 }
 
-/* Links — underlined, no color shift */
-[data-md-color-scheme="default"] .md-typeset a {
-  color: var(--md-default-fg-color);
+/* Body links — warm terracotta so they stand out in a wall of text, with a
+   colour-matched underline. Excludes heading links and permalink anchors so
+   they stay neutral. Only text-decoration-color is transitioned, and with
+   literal values: transitioning a var()-fed property leaves it stale after a
+   palette toggle in Chrome, so the underline colours are hard-coded here. */
+.md-typeset a:not(.headerlink) {
+  color: var(--link-color);
   text-decoration: underline;
-  text-decoration-color: rgba(42, 37, 32, 0.28);
   text-underline-offset: 3px;
   transition: text-decoration-color 0.2s ease;
 }
-[data-md-color-scheme="default"] .md-typeset a:hover {
-  color: var(--md-default-fg-color);
-  text-decoration-color: rgba(42, 37, 32, 0.72);
+.md-typeset a:not(.headerlink):hover {
+  color: var(--link-color--hover);
+}
+[data-md-color-scheme="default"] .md-typeset a:not(.headerlink) {
+  text-decoration-color: rgba(156, 66, 33, 0.4);
+}
+[data-md-color-scheme="default"] .md-typeset a:not(.headerlink):hover {
+  text-decoration-color: rgba(156, 66, 33, 0.85);
+}
+[data-md-color-scheme="slate"] .md-typeset a:not(.headerlink) {
+  text-decoration-color: rgba(221, 145, 101, 0.4);
+}
+[data-md-color-scheme="slate"] .md-typeset a:not(.headerlink):hover {
+  text-decoration-color: rgba(221, 145, 101, 0.9);
 }
 
-[data-md-color-scheme="slate"] .md-typeset a {
+/* Headings that are links stay in the text colour by default — the terracotta
+   is reserved for inline prose links. */
+.md-typeset :is(h1, h2, h3, h4, h5, h6) a:not(.headerlink) {
   color: var(--md-default-fg-color);
-  text-decoration: underline;
-  text-decoration-color: rgba(221, 216, 209, 0.3);
-  text-underline-offset: 3px;
-  transition: text-decoration-color 0.2s ease;
+  text-decoration-color: var(--md-default-fg-color--lightest);
 }
-[data-md-color-scheme="slate"] .md-typeset a:hover {
+.md-typeset :is(h1, h2, h3, h4, h5, h6) a:not(.headerlink):hover {
   color: var(--md-default-fg-color);
-  text-decoration-color: rgba(221, 216, 209, 0.75);
+  text-decoration-color: var(--md-default-fg-color--lighter);
+}
+
+/* Exception: article titles on the Articles index take the accent colour.
+   No text-decoration is set here, so they inherit the underline + per-scheme
+   underline colour from the base link rules above. */
+.md-post__content.md-typeset h2 a {
+  color: var(--link-color);
+}
+.md-post__content.md-typeset h2 a:hover {
+  color: var(--link-color--hover);
+}
+
+/* Links in the article meta sidebar take the accent colour too. The date and
+   read-time rows are plain <div>s, so they stay neutral; the "Back to index"
+   link and the integrated ToC live outside .md-post__meta and are untouched. */
+
+/* Category links are bare text (no icon) — accent the whole link. */
+.md-sidebar--post .md-post__meta a[href*="category/"] {
+  color: var(--link-color);
+}
+.md-sidebar--post .md-post__meta a[href*="category/"]:hover {
+  color: var(--link-color--hover);
+}
+
+/* The changelog link has an icon + text label; accent only the text so the
+   icon keeps the neutral meta colour it shares with the date/read-time rows. */
+.md-sidebar--post .md-post__meta a.md-nav__link .md-ellipsis {
+  color: var(--link-color);
+}
+.md-sidebar--post .md-post__meta a.md-nav__link:hover .md-ellipsis {
+  color: var(--link-color--hover);
 }
 
 /* ===== HEADER ===== */
@@ -252,8 +302,15 @@
 }
 
 .project-card h3 a {
-  color: var(--md-default-fg-color) !important;
-  text-decoration: none !important;
+  color: var(--link-color) !important;
+  /* Longhand (not the `text-decoration` shorthand) so the per-scheme
+     underline colour from the base link rules is preserved. */
+  text-decoration-line: underline !important;
+  text-underline-offset: 3px;
+}
+
+.project-card h3 a:hover {
+  color: var(--link-color--hover) !important;
 }
 
 .project-card p {
