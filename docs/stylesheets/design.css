@@ -433,6 +433,13 @@
   margin-left: auto;
 }
 
+/* On the Articles index the categories sit between the title and the blurb —
+   left-aligned, snug under the title. */
+.md-post__content .blog-categories {
+  justify-content: flex-start;
+  margin: 0.1rem 0 0.85rem;
+}
+
 .blog-category-tag {
   display: inline-block;
   font-size: 0.68rem;
@@ -467,4 +474,17 @@
     text-align: left;
     margin-bottom: 0.25rem;
   }
+}
+
+/* Unlisted-post "DRAFT" marker in the post meta sidebar */
+.md-draft--unlisted {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.1rem;
+  background-color: #d32f2f;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
 }

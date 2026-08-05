@@ -1,6 +1,7 @@
 {#-
   This file was automatically generated - do not edit
 -#}
+{% if not post.meta.unlisted %}
 <article class="md-post md-post--excerpt">
   <header class="md-post__header">
     {% if post.authors %}
@@ -50,6 +51,8 @@
         </span>
       {% endif %}
     </div>
+  </header>
+  {% set categories_html %}
     {% if post.categories %}
       <div class="blog-categories">
         {% for category in post.categories %}
@@ -59,12 +62,14 @@
         {% endfor %}
       </div>
     {% endif %}
-  </header>
+  {% endset %}
   <div class="md-post__content md-typeset">
     {% if post.meta.blurb %}
       <h2><a href="{{ post.post.url | url }}">{{ post.post.title }}</a></h2>
+      {{ categories_html }}
       {{ post.meta.blurb }}
     {% else %}
+      {{ categories_html }}
       {{ post.content }}
     {% endif %}
     {% if post.more %}
@@ -76,3 +81,4 @@
     {% endif %}
   </div>
 </article>
+{% endif %}
