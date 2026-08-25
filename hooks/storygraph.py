@@ -1,7 +1,8 @@
 """MkDocs hook: replace <!-- storygraph --> with a shelf of currently-reading books.
 
-Fetches the public "currently reading" page for a StoryGraph user and renders each
-book as a vertical card (cover, title, link to the book page) laid out horizontally.
+Fetches the public "currently reading" page for a StoryGraph user and renders the
+book covers (each linking to its book page) laid out horizontally, with a short
+intro line above them.
 
 Configuration lives under ``extra.storygraph`` in mkdocs.yml::
 
@@ -9,6 +10,7 @@ Configuration lives under ``extra.storygraph`` in mkdocs.yml::
       storygraph:
         username: bambalaam          # required
         base_url: https://app.thestorygraph.com   # optional
+        intro_message: "Click a cover to open the book on The StoryGraph."  # optional
         empty_message: "Nothing on the nightstand right now."  # optional
 
 The page sits behind an intermittent Cloudflare challenge, so any fetch/parse
@@ -32,6 +34,7 @@ log = logging.getLogger("mkdocs.hooks.storygraph")
 
 PLACEHOLDER = "<!-- storygraph -->"
 DEFAULT_BASE_URL = "https://app.thestorygraph.com"
+DEFAULT_INTRO_MESSAGE = "Click a cover to open the book on The StoryGraph."
 DEFAULT_EMPTY_MESSAGE = "No books to show right now."
 DEFAULT_CACHE_TTL = 3600  # seconds; StoryGraph rate-limits repeated build-time fetches
 TIMEOUT = 20
@@ -208,30 +211,28 @@ def _get_books(config: Any, url: str, username: str, cache_ttl: int) -> list[dic
     return []
 
 
-def _build_html(books: list[dict[str, str]], base_url: str, empty_message: str) -> str:
+def _build_html(
+    books: list[dict[str, str]], base_url: str, intro_message: str, empty_message: str
+) -> str:
     if not books:
         return f'<p class="storygraph-empty">{empty_message}</p>'
 
     cards = []
     for book in books:
-        book_url = base_url + book["path"]
+        href = _escape(base_url + book["path"])
         title = _escape(book["title"])
         cover = _escape(book["cover"])
-        href = _escape(book_url)
         cards.append(
             f"""    <article class="storygraph-book">
       <a class="storygraph-cover" href="{href}" target="_blank" rel="noopener">
         <img src="{cover}" alt="Cover of {title}" loading="lazy">
       </a>
-      <h3 class="storygraph-title">
-        <a href="{href}" target="_blank" rel="noopener">{title}</a>
-      </h3>
-      <a class="storygraph-link" href="{href}" target="_blank" rel="noopener">View on The StoryGraph</a>
     </article>"""
         )
 
     return (
-        '<div class="storygraph-shelf">\n'
+        f"<p>{_escape(intro_message)}</p>\n"
+        + '<div class="storygraph-shelf">\n'
         + "\n".join(cards)
         + "\n</div>"
     )
@@ -253,6 +254,7 @@ def on_page_markdown(markdown: str, *, page, config, files, **kwargs) -> str:
     settings = (config.get("extra") or {}).get("storygraph") or {}
     username = settings.get("username")
     base_url = (settings.get("base_url") or DEFAULT_BASE_URL).rstrip("/")
+    intro_message = settings.get("intro_message") or DEFAULT_INTRO_MESSAGE
     empty_message = settings.get("empty_message") or DEFAULT_EMPTY_MESSAGE
     cache_ttl = settings.get("cache_ttl", DEFAULT_CACHE_TTL)
 
@@ -262,6 +264,6 @@ def on_page_markdown(markdown: str, *, page, config, files, **kwargs) -> str:
 
     url = f"{base_url}/currently-reading/{username}"
     books = _get_books(config, url, username, cache_ttl)
-    html = _build_html(books, base_url, empty_message)
+    html = _build_html(books, base_url, intro_message, empty_message)
 
     return markdown.replace(PLACEHOLDER, html, 1)
