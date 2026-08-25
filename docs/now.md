@@ -6,7 +6,7 @@ hide:
 
 # Now
 
-Last update: 2026-05-13[^1]
+Last update: 2026-08-25[^1]
 
 ## Building
 
@@ -20,6 +20,10 @@ Currently learning about:
 
 - Product Thinking and Digital Adoption 📝
 - How to be a dad! 👶
+
+## Reading
+
+<!-- storygraph -->
 
 [^1]:
   A "now" page is a page to keep track of what I've been up to lately, which helps me avoid stagnating because
