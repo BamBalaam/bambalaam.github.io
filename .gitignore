@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Track the StoryGraph currently-reading cache so CI/fresh builds have a
+# fallback when the live fetch is blocked by Cloudflare (overrides .cache above)
+!.cache/
+/.cache/*
+!/.cache/storygraph-*.json
