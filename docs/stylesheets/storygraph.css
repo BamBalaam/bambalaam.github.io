@@ -1,0 +1,59 @@
+/* Currently-reading shelf rendered by hooks/storygraph.py */
+
+.storygraph-shelf {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.storygraph-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 8.5rem;
+  text-align: center;
+}
+
+.storygraph-cover {
+  display: block;
+  width: 100%;
+}
+
+.storygraph-cover img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.storygraph-cover:hover img {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.storygraph-title {
+  margin: 0.7rem 0 0.2rem;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.storygraph-title a {
+  color: var(--md-default-fg-color);
+}
+
+.storygraph-title a:hover {
+  color: var(--md-accent-fg-color);
+}
+
+.storygraph-link {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.storygraph-empty {
+  color: var(--md-default-fg-color--light);
+  font-style: italic;
+}

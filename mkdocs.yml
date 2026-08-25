@@ -7,6 +7,7 @@ copyright: Copyright &copy; 2026 André Madeira Cortes
 hooks:
   - hooks/gantt.py
   - hooks/changelogs.py
+  - hooks/storygraph.py
 
 theme:
   name: material
@@ -47,12 +48,15 @@ extra_css:
   - stylesheets/gantt.css
   - stylesheets/education.css
   - stylesheets/sidenotes.css
+  - stylesheets/storygraph.css
 
 extra_javascript:
   - javascript/sidenotes.js
 
 extra:
   generator: false
+  storygraph:
+    username: bambalaam
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/BamBalaam
