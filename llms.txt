@@ -1,0 +1,11 @@
+# BamBalaam
+
+> Personal website of André Madeira Cortes
+
+## Pages
+
+- [Home](https://bambalaam.me/index.md)
+- [About](https://bambalaam.me/about.md)
+- [Now](https://bambalaam.me/now.md)
+- [Projects](https://bambalaam.me/projects.md)
+- [Articles](https://bambalaam.me/blog.md)

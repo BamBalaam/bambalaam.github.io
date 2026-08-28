@@ -1,0 +1,88 @@
+/* ===== BLOG POST SIDEBAR ===== */
+
+/* The ToC is integrated into the left meta sidebar (toc.integrate). Separate
+   it from the post meta above it with spacing and a divider. */
+.md-sidebar--post .md-nav--secondary {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Below the wide breakpoint Material stacks the post meta sidebar with
+   flex-direction: column-reverse, dropping it (and now the integrated ToC)
+   to the very bottom of the page. Restore normal order so the metadata and
+   ToC sit above the article instead. */
+@media (max-width: 76.234em) {
+  .md-content--post {
+    flex-direction: column;
+  }
+}
+
+/* ===== SIDENOTES (Tufte-style) ===== */
+
+.sidenote {
+  font-size: 0.78em;
+  line-height: 1.55;
+  color: var(--md-default-fg-color--light);
+}
+
+.sidenote .sidenote-number {
+  font-size: 0.75em;
+  vertical-align: super;
+  line-height: 0;
+  margin-right: 0.2em;
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* Wide + space available: absolute positioning in the right margin.
+   The .sidenote--wide class is added by JS only when
+   window.innerWidth - article.right >= 180px. */
+@media (min-width: 76.25em) {
+  article.md-content__inner {
+    position: relative;
+    overflow: visible;
+  }
+
+  .md-content {
+    overflow: visible;
+  }
+
+  /* Blog posts move the ToC into the left meta sidebar (toc.integrate) and
+     free the right side. Reserve a right gutter for sidenotes — kept modest
+     so the article keeps a generous reading width and the notes sit in the
+     near margin rather than being stranded against the viewport edge. The
+     class is added by sidenotes.js only when a post actually has sidenotes. */
+  .md-content--sidenotes .md-content__inner {
+    margin-right: 10rem;
+  }
+
+  /* left, width, and top are all set by JavaScript */
+  .sidenote--wide {
+    position: absolute;
+    margin: 0;
+    padding-left: 0.75em;
+    border-left: 1px solid var(--md-default-fg-color--lightest);
+  }
+}
+
+/* Medium: float within the content column (no sidebar space available) */
+@media (min-width: 60em) and (max-width: 76.24em) {
+  .sidenote {
+    float: right;
+    clear: right;
+    width: 34%;
+    margin: 0.15em 0 0.75em 1.25em;
+    padding-left: 0.75em;
+    border-left: 1px solid var(--md-default-fg-color--lightest);
+  }
+}
+
+/* Narrow: block note below the reference */
+@media (max-width: 59.99em) {
+  .sidenote {
+    display: block;
+    margin: 0.4em 0 0.9em 0;
+    padding: 0.2em 0 0.2em 0.7em;
+    border-left: 2px solid var(--md-default-fg-color--lightest);
+  }
+}
