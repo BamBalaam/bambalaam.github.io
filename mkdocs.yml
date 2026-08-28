@@ -8,6 +8,7 @@ hooks:
   - hooks/gantt.py
   - hooks/changelogs.py
   - hooks/storygraph.py
+  - hooks/raw_markdown.py
 
 theme:
   name: material
